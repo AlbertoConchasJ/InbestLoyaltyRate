@@ -7,6 +7,6 @@ This application uses AWS to generate a complete serverless website with the nex
 4. Consult dynamo DB with lambda
  
 
-![Architecture](images/arc.png)
+![Architecture](images/Arc.png)
 
 
