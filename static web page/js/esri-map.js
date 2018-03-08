@@ -38,14 +38,14 @@ WildRydes.map = WildRydes.map || {};
             }
         });
 
-        var unicornSymbol = new PictureMarkerSymbol({
-            url: '/images/unicorn-icon.png',
+        var dogoSymbol = new PictureMarkerSymbol({
+            url: '/images/hot_dog.png',
             width: '25px',
             height: '25px'
         });
 
         var pinGraphic;
-        var unicornGraphic;
+        var dogoGraphic;
 
         function updateCenter(newValue) {
             wrMap.center = {
@@ -100,12 +100,12 @@ WildRydes.map = WildRydes.map || {};
                     longitude: origin.longitude + deltaLon,
                     latitude: origin.latitude + deltaLat
                 });
-                view.graphics.remove(unicornGraphic);
-                unicornGraphic = new Graphic({
+                view.graphics.remove(dogoGraphic);
+                dogoGraphic = new Graphic({
                     geometry: point,
-                    symbol: unicornSymbol
+                    symbol: dogoSymbol
                 });
-                view.graphics.add(unicornGraphic);
+                view.graphics.add(dogoGraphic);
                 if (progressPct < 1) {
                     requestAnimationFrame(step);
                 } else {

@@ -57,8 +57,8 @@ exports.handler = (event, context, callback) => {
             statusCode: 201,
             body: JSON.stringify({
                 RideId: rideId,
-                Unicorn: unicorn,
-                UnicornName: unicorn.Name,
+                Product: unicorn,
+                ProductName: unicorn.Name,
                 Eta: '30 seconds',
                 Rider: username,
             }),
@@ -91,8 +91,8 @@ function recordRide(rideId, username, unicorn) {
         Item: {
             RideId: rideId,
             User: username,
-            Unicorn: unicorn,
-            UnicornName: unicorn.Name,
+            Product: unicorn,
+            ProductName: unicorn.Name,
             RequestTime: new Date().toISOString(),
         },
     }).promise();
