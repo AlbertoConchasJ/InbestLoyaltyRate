@@ -6,19 +6,29 @@ const ddb = new AWS.DynamoDB.DocumentClient();
 
 const fleet = [
     {
-        Name: 'Bucephalus',
-        Color: 'Golden',
-        Gender: 'Male',
+        Name: 'vikingos',
+        Taste: 'pollo',
+        Price: '27.00',
     },
     {
-        Name: 'Shadowfax',
-        Color: 'White',
-        Gender: 'Male',
+        Name: 'florentinas',
+        Taste: 'fresa',
+        Price: '10.99',
     },
     {
-        Name: 'Rocinante',
-        Color: 'Yellow',
-        Gender: 'Female',
+        Name: 'rufles',
+        Taste: 'queso',
+        Price: '14.02',
+    },
+    {
+        Name: 'suavicremas',
+        Taste: 'vainilla',
+        Price: '7.50',
+    },
+    {
+        Name: 'Helado',
+        Taste: 'pistache',
+        Price: '47.90',
     },
 ];
 
@@ -44,9 +54,9 @@ exports.handler = (event, context, callback) => {
 
     const pickupLocation = requestBody.PickupLocation;
 
-    const unicorn = findUnicorn(pickupLocation);
+    const product = findProduct(pickupLocation);
 
-    recordRide(rideId, username, unicorn).then(() => {
+    recordRide(rideId, username, product).then(() => {
         // You can use the callback function to provide a return value from your Node.js
         // Lambda functions. The first parameter is used for failed invocations. The
         // second parameter specifies the result data of the invocation.
@@ -57,8 +67,13 @@ exports.handler = (event, context, callback) => {
             statusCode: 201,
             body: JSON.stringify({
                 RideId: rideId,
+<<<<<<< HEAD
                 Product: unicorn,
                 ProductName: unicorn.Name,
+=======
+                Product: product,
+                ProductName: product.Name,
+>>>>>>> ae25d265c2776818918affe7fe589078d3f5818f
                 Eta: '30 seconds',
                 Rider: username,
             }),
@@ -80,19 +95,24 @@ exports.handler = (event, context, callback) => {
 // This is where you would implement logic to find the optimal unicorn for
 // this ride (possibly invoking another Lambda function as a microservice.)
 // For simplicity, we'll just pick a unicorn at random.
-function findUnicorn(pickupLocation) {
-    console.log('Finding unicorn for ', pickupLocation.Latitude, ', ', pickupLocation.Longitude);
+function findProduct(pickupLocation) {
+    console.log('Finding product for ', pickupLocation.Latitude, ', ', pickupLocation.Longitude);
     return fleet[Math.floor(Math.random() * fleet.length)];
 }
 
-function recordRide(rideId, username, unicorn) {
+function recordRide(idProducto, username, product) {
     return ddb.put({
-        TableName: 'Rides',
+        TableName: 'productos',
         Item: {
-            RideId: rideId,
+            IDproducto: idProducto,
             User: username,
+<<<<<<< HEAD
             Product: unicorn,
             ProductName: unicorn.Name,
+=======
+            Product: product,
+            ProductName: product.Name,
+>>>>>>> ae25d265c2776818918affe7fe589078d3f5818f
             RequestTime: new Date().toISOString(),
         },
     }).promise();
