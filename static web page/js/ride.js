@@ -60,7 +60,7 @@ WildRydes.map = WildRydes.map || {};
 
         WildRydes.authToken.then(function updateAuthMessage(token) {
             if (token) {
-                displayUpdate('Estas Autenticado. Para ver tu <a href="#authTokenModal" data-toggle="modal">auth token</a>.');
+                displayUpdate('Estas Autenticado. Ve <a href="#authTokenModal" data-toggle="modal">aquí</a> tu token.');
                 $('.authToken').text(token);
             }
         });
