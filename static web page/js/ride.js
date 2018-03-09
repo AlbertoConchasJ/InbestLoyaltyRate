@@ -33,7 +33,7 @@ WildRydes.map = WildRydes.map || {};
             error: function ajaxError(jqXHR, textStatus, errorThrown) {
                 console.error('Error requesting ride: ', textStatus, ', Details: ', errorThrown);
                 console.error('Response: ', jqXHR.responseText);
-                alert('Un error ocurrio con tu pedido de hot-dog:\n' + jqXHR.responseText);
+                alert('Un error ocurrio con tu pedido:\n' + jqXHR.responseText);
             }
         });
     }
@@ -46,10 +46,10 @@ WildRydes.map = WildRydes.map || {};
         pronoun = unicorn.Taste;
         displayUpdate(unicorn.Name + ', tu ' + unicorn.Price + ' Hot-dog, estas en ' + pronoun + ' camino.');
         animateArrival(function animateCallback() {
-            displayUpdate(unicorn.Name + ' has arrived. Giddy up!');
+            displayUpdate(unicorn.Name + ' a llegado. Disfrutalo!');
             WildRydes.map.unsetLocation();
             $('#request').prop('disabled', 'disabled');
-            $('#request').text('Set Pickup');
+            $('#request').text('Selecciona Lugar');
         });
     }
 
@@ -72,7 +72,7 @@ WildRydes.map = WildRydes.map || {};
 
     function handlePickupChanged() {
         var requestButton = $('#request');
-        requestButton.text('Solicitud de Dogo');
+        requestButton.text('Solicitud Producto');
         requestButton.prop('disabled', false);
     }
 

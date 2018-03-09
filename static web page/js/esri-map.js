@@ -39,7 +39,7 @@ WildRydes.map = WildRydes.map || {};
         });
 
         var dogoSymbol = new PictureMarkerSymbol({
-            url: '/images/hot_dog.png',
+            url: '/images/carrito.png',
             width: '25px',
             height: '25px'
         });
