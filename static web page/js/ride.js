@@ -33,7 +33,7 @@ WildRydes.map = WildRydes.map || {};
             error: function ajaxError(jqXHR, textStatus, errorThrown) {
                 console.error('Error requesting ride: ', textStatus, ', Details: ', errorThrown);
                 console.error('Response: ', jqXHR.responseText);
-                alert('An error occured when requesting your unicorn:\n' + jqXHR.responseText);
+                alert('Un error ocurrio con tu pedido de hot-dog:\n' + jqXHR.responseText);
             }
         });
     }
@@ -42,9 +42,9 @@ WildRydes.map = WildRydes.map || {};
         var unicorn;
         var pronoun;
         console.log('Response received from API: ', result);
-        unicorn = result.Unicorn;
-        pronoun = unicorn.Gender === 'Male' ? 'his' : 'her';
-        displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.');
+        unicorn = result.Product;
+        pronoun = unicorn.Taste;
+        displayUpdate(unicorn.Name + ', tu ' + unicorn.Price + ' Hot-dog, estas en ' + pronoun + ' camino.');
         animateArrival(function animateCallback() {
             displayUpdate(unicorn.Name + ' has arrived. Giddy up!');
             WildRydes.map.unsetLocation();
@@ -60,7 +60,7 @@ WildRydes.map = WildRydes.map || {};
 
         WildRydes.authToken.then(function updateAuthMessage(token) {
             if (token) {
-                displayUpdate('You are authenticated. Click to see your <a href="#authTokenModal" data-toggle="modal">auth token</a>.');
+                displayUpdate('Estas Autentificado. Para ver tu <a href="#authTokenModal" data-toggle="modal">auth token</a>.');
                 $('.authToken').text(token);
             }
         });
@@ -72,7 +72,7 @@ WildRydes.map = WildRydes.map || {};
 
     function handlePickupChanged() {
         var requestButton = $('#request');
-        requestButton.text('Request Unicorn');
+        requestButton.text('Solicitud de Dogo');
         requestButton.prop('disabled', false);
     }
 
