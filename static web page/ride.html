@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-    <title>Wild Rydes</title>
+    <title>OXXO - Envios</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,19 +22,19 @@
 
     <div class="info panel panel-default">
         <div class="panel-heading">
-            <button id="request" class="btn btn-primary" disabled="disabled">Set pickup</button>
+            <button id="request" class="btn btn-primary" disabled="disabled">¡Enviarme un producto!</button>
             <div class="dropdown pull-right">
                 <button id="accountLink" class="btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Account <span class="caret"></span>
+                    Cuenta <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="accountLink">
-                    <li><a id="signOut" href="#">Sign out</a></li>
+                    <li><a id="signOut" href="#">Cerrar sesión</a></li>
                 </ul>
             </div>
         </div>
         <div class="panel-body">
             <ol id="updates">
-                <li>Welcome! Click the map to set your pickup location.</li>
+                <li>¡Bienvenido! Da clic en el mapa, a donde quieres que te enviemos un producto.</li>
             </ol>
         </div>
     </div>
@@ -43,11 +43,11 @@
         <div class="backdrop"></div>
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">Successfully Authenticated!</h3>
+                <h3 class="panel-title">¡Autentificado correctamente!</h3>
             </div>
             <div class="panel-body">
-                <p>This page is not functional yet because there is no API invoke URL configured in <a href="/js/config.js">/js/config.js</a>. You'll configure this in Module 3.</p>
-                <p>In the meantime, if you'd like to test the Amazon Cognito user pool authorizer for your API, use the auth token below:</p>
+                <p>Esta pagina no es fincional todavia por que no hay API invokando la url configurada en <a href="/js/config.js">config.js</a>. Configura esto en el modulo 3.</p>
+                <p>Mientras tanto, Si deseas provar Amazon Cognito user pool autentificador para tu API, usa el token siguiente:</p>
                 <textarea class="authToken"></textarea>
             </div>
         </div>
@@ -57,10 +57,10 @@
         <div class="backdrop"></div>
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">No Cognito User Pool Configured</h3>
+                <h3 class="panel-title">'Cognito User Pool' no configurado</h3>
             </div>
             <div class="panel-body">
-                <p>There is no user pool configured in <a href="/js/config.js">/js/config.js</a>. You'll configure this in Module 2 of the workshop.</p>
+                <p>No existe un 'user pool' configurado en <a href="/js/config.js">config.js</a>. Configura esto en el modulo 2.</p>
             </div>
         </div>
     </div>
@@ -75,13 +75,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Your Auth Token</h4>
+                    <h4 class="modal-title" id="myModalLabel">Mi Token de autenticidad</h4>
                 </div>
                 <div class="modal-body">
                     <textarea class="authToken"></textarea>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
