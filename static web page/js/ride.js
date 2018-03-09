@@ -42,19 +42,11 @@ WildRydes.map = WildRydes.map || {};
         var product;
         var pronoun;
         console.log('Response received from API: ', result);
-<<<<<<< HEAD
         product = result.Product;
         pronoun = product.Taste;
         displayUpdate( 'Tus '+product.Name + ' de ' + pronoun + ' (precio: $' + product.Price + ') estas en  camino.');
         animateArrival(function animateCallback() {
             displayUpdate('Tus '+product.Name + ' han llegado. ¡Disfrutalo!');
-=======
-        unicorn = result.Product;
-        pronoun = unicorn.Taste;
-        displayUpdate( 'Tus '+unicorn.Name + ' de ' + pronoun + ' (precio: $' + unicorn.Price + ') estas en  camino.');
-        animateArrival(function animateCallback() {
-            displayUpdate('Tus '+unicorn.Name + ' han llegado. Disfrutalo!');
->>>>>>> 03819d6cdf1e7b98231568e6e96a95eda8ca4bcd
             WildRydes.map.unsetLocation();
             $('#request').prop('disabled', 'disabled');
             $('#request').text('Selecciona Lugar');
@@ -68,11 +60,7 @@ WildRydes.map = WildRydes.map || {};
 
         WildRydes.authToken.then(function updateAuthMessage(token) {
             if (token) {
-<<<<<<< HEAD
                 displayUpdate('Ve <a href="#authTokenModal" data-toggle="modal">aquí</a> tu token de lealtad Oxxo.');
-=======
-                displayUpdate('Estas Autenticado. Ve <a href="#authTokenModal" data-toggle="modal">aquí</a> tu token.');
->>>>>>> 03819d6cdf1e7b98231568e6e96a95eda8ca4bcd
                 $('.authToken').text(token);
             }
         });
