@@ -15,7 +15,7 @@ WildRydes.map = WildRydes.map || {};
         alert(error);
         window.location.href = '/signin.html';
     });
-    function requestUnicorn(pickupLocation) {
+    function requestProduct(pickupLocation) {
         $.ajax({
             method: 'POST',
             url: _config.api.invokeUrl + '/ride',
@@ -39,14 +39,14 @@ WildRydes.map = WildRydes.map || {};
     }
 
     function completeRequest(result) {
-        var unicorn;
+        var product;
         var pronoun;
         console.log('Response received from API: ', result);
-        unicorn = result.Product;
-        pronoun = unicorn.Taste;
-        displayUpdate(unicorn.Name + ', tu ' + unicorn.Price + ' Hot-dog, estas en ' + pronoun + ' camino.');
+        product = result.Product;
+        pronoun = product.Taste;
+        displayUpdate( 'Tus '+product.Name + ' de ' + pronoun + ' (precio: $' + product.Price + ') estas en  camino.');
         animateArrival(function animateCallback() {
-            displayUpdate(unicorn.Name + ' a llegado. Disfrutalo!');
+            displayUpdate('Tus '+product.Name + ' han llegado. ¡Disfrutalo!');
             WildRydes.map.unsetLocation();
             $('#request').prop('disabled', 'disabled');
             $('#request').text('Selecciona Lugar');
@@ -60,7 +60,7 @@ WildRydes.map = WildRydes.map || {};
 
         WildRydes.authToken.then(function updateAuthMessage(token) {
             if (token) {
-                displayUpdate('Estas Autentificado. Para ver tu <a href="#authTokenModal" data-toggle="modal">auth token</a>.');
+                displayUpdate('Ve <a href="#authTokenModal" data-toggle="modal">aquí</a> tu token de lealtad Oxxo.');
                 $('.authToken').text(token);
             }
         });
@@ -72,14 +72,14 @@ WildRydes.map = WildRydes.map || {};
 
     function handlePickupChanged() {
         var requestButton = $('#request');
-        requestButton.text('Solicitud Producto');
+        requestButton.text('Solicitud producto');
         requestButton.prop('disabled', false);
     }
 
     function handleRequestClick(event) {
         var pickupLocation = WildRydes.map.selectedPoint;
         event.preventDefault();
-        requestUnicorn(pickupLocation);
+        requestProduct(pickupLocation);
     }
 
     function animateArrival(callback) {
