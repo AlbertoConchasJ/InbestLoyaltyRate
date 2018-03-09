@@ -44,9 +44,9 @@ WildRydes.map = WildRydes.map || {};
         console.log('Response received from API: ', result);
         unicorn = result.Product;
         pronoun = unicorn.Taste;
-        displayUpdate(unicorn.Name + ', tu ' + unicorn.Price + ' Hot-dog, estas en ' + pronoun + ' camino.');
+        displayUpdate( 'Tus '+unicorn.Name + ' de ' + pronoun + ' (precio: $' + unicorn.Price + ') estas en  camino.');
         animateArrival(function animateCallback() {
-            displayUpdate(unicorn.Name + ' a llegado. Disfrutalo!');
+            displayUpdate('Tus '+unicorn.Name + ' han llegado. Disfrutalo!');
             WildRydes.map.unsetLocation();
             $('#request').prop('disabled', 'disabled');
             $('#request').text('Selecciona Lugar');
@@ -60,7 +60,7 @@ WildRydes.map = WildRydes.map || {};
 
         WildRydes.authToken.then(function updateAuthMessage(token) {
             if (token) {
-                displayUpdate('Estas Autentificado. Para ver tu <a href="#authTokenModal" data-toggle="modal">auth token</a>.');
+                displayUpdate('Estas Autenticado. Ve <a href="#authTokenModal" data-toggle="modal">aquí</a> tu token.');
                 $('.authToken').text(token);
             }
         });
